@@ -12,6 +12,23 @@ Ask your AI agent what any Amazon product or brand sells, what it keeps after fe
 
 <!-- demo video: drag an mp4 into the GitHub editor and paste the user-attachments URL here -->
 
+## Example
+
+> **You:** How much does B0F1H6B5VJ sell a month?
+
+> **Agent** (amazon-revenue-sales, 1 Keepa token): Songbird Specialties Singing Bird Wine Bottle Pourer, $29.99, figures for November 2026.
+> This month: 800-899 units, **$24.0K-27.0K**, from Amazon's "800+ bought in past month" badge.
+>
+> | Month | Units | Revenue |
+> |---|--:|--:|
+> | 2026-06 | 200-299 | $6.0K-9.0K |
+> | 2026-07 | 300-399 | $9.0K-12.0K |
+> | 2026-08 | 300-399 | $9.0K-12.0K |
+> | 2026-09 | 500-599 | $15.0K-18.0K |
+> | 2026-10 | 500-599 | $15.0K-18.0K |
+>
+> Peak: September. Figures are a floor, and today's price is applied to past months.
+
 ## Install
 
 | Where | How |

@@ -1,0 +1,21 @@
+name: Request a skill or report a wrong number
+description: Ask for a new skill, or tell us where a figure looks off.
+title: "[request] "
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is this?
+      options:
+        - Request a new skill
+        - A number looks wrong
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: For a request, the question you want your agent to answer. For a wrong number, the skill, the ASIN or brand, the figure you got and what you expected (and why).
+    validations:
+      required: true

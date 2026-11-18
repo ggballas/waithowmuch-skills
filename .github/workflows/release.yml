@@ -1,0 +1,56 @@
+# On a v* tag: build one zip per skill folder under skills/ (the folder at the
+# zip's top level, as claude.ai's "Upload a skill" needs) and one plugin zip
+# (.claude-plugin/ at the top level, for claude.ai's "Upload plugin"), then
+# attach them to a GitHub Release. The /go/zip-<skill> links redirect to
+# releases/latest/download/<skill>.zip, so the asset names must not change. Zips
+# are never committed: the Claude directory holds any .zip in the plugin folder
+# for review.
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tag matches the manifest versions; skill folders are well formed
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          for f in .claude-plugin/plugin.json plugin.json; do
+            v=$(jq -r .version "$f")
+            [ "$v" = "$tag" ] || { echo "::error::$f is $v, tag is $GITHUB_REF_NAME"; exit 1; }
+          done
+          for f in skills/*/scripts/whm.py; do
+            grep -q "^VERSION = \"$tag\"" "$f" || { echo "::error::$f VERSION is not $tag"; exit 1; }
+          done
+          for d in skills/*/; do
+            s=$(basename "$d")
+            [ "$s" = "$(printf %s "$s" | tr A-Z a-z)" ] || { echo "::error::skills/$s is not lowercase"; exit 1; }
+            [ -f "$d/SKILL.md" ] || { echo "::error::skills/$s has no SKILL.md"; exit 1; }
+            grep -q "^name: $s\$" "$d/SKILL.md" || { echo "::error::skills/$s/SKILL.md name is not $s"; exit 1; }
+          done
+
+      - name: Build zips
+        run: |
+          mkdir dist
+          for d in skills/*/; do
+            s=$(basename "$d")
+            (cd skills && zip -qrX "../dist/$s.zip" "$s" -x '*/.DS_Store' '*/__pycache__/*')
+          done
+          zip -qrX dist/waithowmuch-plugin.zip \
+            .claude-plugin/plugin.json plugin.json skills scripts assets README.md LICENSE \
+            -x '*/.DS_Store' '*/__pycache__/*'
+          ls -l dist
+          for z in dist/*.zip; do unzip -tq "$z"; done
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/*.zip --title "$GITHUB_REF_NAME" --generate-notes

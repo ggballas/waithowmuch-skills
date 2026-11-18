@@ -1,0 +1,15 @@
+{
+  "name": "waithowmuch",
+  "description": "Skills for Amazon sellers: sales history, profit, landed cost, ad spend, keywords, listing and review teardowns, valuation, TikTok Shop, outside traffic and case studies. Your own provider keys or one WaitHowMuch key.",
+  "owner": {
+    "name": "Gershon Ballas",
+    "url": "https://waithowmuch.com"
+  },
+  "plugins": [
+    {
+      "name": "waithowmuch",
+      "source": "./",
+      "description": "14 skills for Amazon sellers: sales and revenue history, profit and landed cost, ad spend, keywords, listing and review teardowns, brand valuation, TikTok Shop and outside traffic, product finding, case studies."
+    }
+  ]
+}

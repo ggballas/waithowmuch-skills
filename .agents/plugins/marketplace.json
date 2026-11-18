@@ -1,0 +1,11 @@
+{
+  "name": "waithowmuch",
+  "plugins": [
+    {
+      "name": "waithowmuch",
+      "source": { "source": "local", "path": "./" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "waithowmuch",
+  "version": "0.4.1",
+  "description": "14 skills for Amazon sellers: sales and revenue history, profit and landed cost, ad spend, keywords, listing and review teardowns, brand valuation, TikTok Shop and outside traffic, product finding, case studies. Use your own provider keys or one WaitHowMuch key; figures are estimates.",
+  "author": { "name": "Gershon Ballas", "url": "https://waithowmuch.com" },
+  "homepage": "https://waithowmuch.com",
+  "repository": "https://github.com/ggballas/waithowmuch-skills",
+  "license": "MIT",
+  "keywords": ["amazon", "fba", "amazon-seller", "product-research", "ecommerce", "keepa", "amazon-ppc", "keyword-research", "profit-calculator", "brand-valuation", "tiktok-shop", "case-studies"]
+}

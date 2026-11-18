@@ -45,23 +45,23 @@ Ask your AI agent what any Amazon product or brand sells, what it keeps after fe
 
 Every skill works two ways. **Option A:** your own provider keys, as marked in the provider columns. **Option B:** one WaitHowMuch key (`WHM_API_KEY`) in place of all of them.
 
-| Skill | **WaitHowMuch** (Option B) | Keepa | Jungle Scout | DataForSEO | Kalodata | Similarweb |
+| Skill | Keepa | Jungle Scout | DataForSEO | Kalodata | Similarweb | **WaitHowMuch** (Option B) |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|
-| amazon-revenue-sales | ✓ | ✓ |  |  |  |  |
-| amazon-profit-calculator | ✓ | ✓ |  |  |  |  |
-| amazon-cogs-estimator | ✓ | opt |  |  |  |  |
-| amazon-adspend-estimator | ✓ | opt | either | either |  |  |
-| amazon-top-organic-keywords | ✓ |  | either | either |  |  |
-| amazon-listing-teardown | ✓ | ✓ |  |  |  |  |
-| amazon-review-insights | ✓ | opt |  |  |  |  |
-| amazon-brand-valuation | ✓ | ✓ |  |  |  |  |
-| amazon-design-based-product-finder | ✓ | ✓ |  |  |  |  |
-| alibaba-automated-supplier-contact | ✓ |  |  |  |  |  |
-| tiktok-shop-research | ✓ |  |  |  | ✓ |  |
-| brand-outside-traffic | ✓ | opt |  | opt |  | opt |
-| amazon-case-studies | ✓ | ✓ |  |  |  |  |
-| amazon-case-study-builder | ✓ | ✓ | either | either | opt | opt |
-| **Get a key →** | [sign up](https://api.waithowmuch.com/go/whm-key?from=root) | [key](https://api.waithowmuch.com/go/keepa-api?from=root) | [key](https://api.waithowmuch.com/go/junglescout-api?from=root) | [key](https://api.waithowmuch.com/go/dataforseo-api?from=root) | [key](https://api.waithowmuch.com/go/kalodata-api?from=root) | [key](https://api.waithowmuch.com/go/similarweb-api?from=root) |
+| amazon-revenue-sales | ✓ |  |  |  |  | ✓ |
+| amazon-profit-calculator | ✓ |  |  |  |  | ✓ |
+| amazon-cogs-estimator | opt |  |  |  |  | ✓ |
+| amazon-adspend-estimator | opt | either | either |  |  | ✓ |
+| amazon-top-organic-keywords |  | either | either |  |  | ✓ |
+| amazon-listing-teardown | ✓ |  |  |  |  | ✓ |
+| amazon-review-insights | opt |  |  |  |  | ✓ |
+| amazon-brand-valuation | ✓ |  |  |  |  | ✓ |
+| amazon-design-based-product-finder | ✓ |  |  |  |  | ✓ |
+| alibaba-automated-supplier-contact |  |  |  |  |  | ✓ |
+| tiktok-shop-research |  |  |  | ✓ |  | ✓ |
+| brand-outside-traffic | opt |  | opt |  | opt | ✓ |
+| amazon-case-studies | ✓ |  |  |  |  | ✓ |
+| amazon-case-study-builder | ✓ | either | either | opt | opt | ✓ |
+| **Get a key →** | [key](https://api.waithowmuch.com/go/keepa-api?from=root) | [key](https://api.waithowmuch.com/go/junglescout-api?from=root) | [key](https://api.waithowmuch.com/go/dataforseo-api?from=root) | [key](https://api.waithowmuch.com/go/kalodata-api?from=root) | [key](https://api.waithowmuch.com/go/similarweb-api?from=root) | [sign up](https://api.waithowmuch.com/go/whm-key?from=root) |
 
 Provider columns: ✓ needed; either: one of the two; opt: adds data; no mark needs no key. The WaitHowMuch key alone covers every row. Each skill's README lists its costs. The variables are `KEEPA_API_KEY`, `JUNGLESCOUT_API_KEY`, `DATAFORSEO_LOGIN` + `DATAFORSEO_PASSWORD`, `KALODATA_API_KEY`, `SIMILARWEB_API_KEY`, and optionally `AMAZON_ADS_*` for Amazon's suggested bids.
 
